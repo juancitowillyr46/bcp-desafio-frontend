@@ -1,0 +1,49 @@
+<div class="wrapper-agencies-detail">
+    <form class="wrapper-form" [formGroup]="agencyFormGroup">
+        <mat-form-field class="frm-full-width" appearance="fill" >
+            <mat-label>Nombre de la agencia</mat-label>
+            <input matInput value="" formControlName="agencyName">
+            <mat-error *ngIf="f.agencyName.errors">
+            Nombre <strong>es requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="frm-full-width" appearance="fill">
+            <mat-label>Dirección</mat-label>
+            <input matInput value="" formControlName="agencyAddress">
+            <mat-error *ngIf="f.agencyAddress.errors">
+                Dirección <strong>es requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="frm-full-width" appearance="fill">
+            <mat-label>Distrito</mat-label>
+            <input matInput value="" formControlName="agencyDistrict">
+            <mat-error *ngIf="f.agencyDistrict.errors">
+                Distrito <strong>es requerido</strong>
+              </mat-error>
+        </mat-form-field>
+        <mat-form-field class="frm-full-width" appearance="fill">
+            <mat-label>Latitud</mat-label>
+            <input matInput value="" formControlName="agencyLatitude">
+            <mat-error *ngIf="f.agencyLatitude.errors">
+                Latitud <strong>es requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="frm-full-width" appearance="fill">
+            <mat-label>Longitud</mat-label>
+            <input matInput value=""formControlName="agencyLongitude">
+            <mat-error *ngIf="f.agencyLongitude.errors">
+                Longitud <strong>es requerido</strong>
+            </mat-error>
+        </mat-form-field>
+        <div class="wrapper-maps">
+            <app-agency-map></app-agency-map>
+        </div>
+        <div class="wrapper-actions">
+            <button mat-raised-button color="primary">
+                <span *ngIf="!isTypeAction" (click)="postUpdateAgency()">Actualizar</span>
+                <span *ngIf="isTypeAction" (click)="postCreatAgency()">Crear</span>
+            </button>
+            <button mat-raised-button color="warn" (click)="goReturnAgencyList()">Retornar</button>
+        </div>
+    </form>
+</div>

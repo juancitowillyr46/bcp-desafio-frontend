@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+/* Resets Tags */
+html, body { height: 100%; }
+body { margin: 0;}
+
+
+.wrapper-container {
+    width: 100%;
+    display: inline-block;
+}
+
+/* -- App header -- */
+.app-header {
+    width: 100%;
+
+    .mat-toolbar.mat-primary{
+        background-color: #002a8d;
+    }
+    
+    span {
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+    }
+}
+
+/* -- Agency List -- */
+.wrapper-agencies {
+
+    position: fixed;
+    overflow: scroll;
+    // height: 590px;
+    width: 100%;
+
+    .mat-list-item {
+        cursor: pointer;
+        .agency-list-icon {
+            color: #b0b0b0;
+        }
+        .agency-list-av{
+            color: #b0b0b0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px !important;
+        }
+        .agency-list-name, 
+        .agency-list-district{
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px !important;
+        }
+    }
+
+    .agencies-searchs {
+        display: block;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        width: auto;
+        .mat-form-field {
+            width: 100%;
+        }
+    }
+}
+
+
+
+/* -- Agency Add Boton Fixed -- */
+.wrapper-btn-actions-fixed {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    /*top: 44em;*/
+}
+    
+/* -- Agency Add -- */
+.wrapper-form {
+    padding: 10px;
+
+    .frm-full-width {
+        width: 100%;
+    }
+    .wrapper-actions {
+        text-align: center;
+    }
+    .wrapper-actions button {
+        margin-right: 5px;
+    }
+}
+
+/* -- Load Page -- */
+.wrapper-load-page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.8;
+    top: 0px;
+    .load-page-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .mat-progress-spinner{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* -- Agency Map -- */
+.wrapper-maps {
+    padding-bottom: 20px;
+}
