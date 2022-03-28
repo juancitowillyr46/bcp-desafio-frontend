@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  AGENCY_IMAGE_URL: 'http://localhost:4200/assets/images/marker-icon.svg'
+  AGENCY_URL_MARKER: 'http://localhost:4200/assets/images/marker-icon.svg',
+  AGENCY_URL_IMAGE: 'http://localhost:4200/assets/images/',
 };
 
 /*

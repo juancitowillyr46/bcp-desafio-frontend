@@ -1,0 +1,10 @@
+<mat-list-item aria-hidden="false" (click)="goDetailAgency(agency.id)">
+    <img matListAvatar [src]="urlImage + agency.image">
+    <div mat-line class="agency-list-name">{{ agency.agencia }}</div>
+    <div mat-line class="agency-list-district">{{ agency.distrito }}</div>
+    <div mat-line class="agency-list-av">{{ agency.direccion }}</div>
+    <button mat-icon-button color="primary">
+        <mat-icon>star_outline</mat-icon>
+    </button>
+</mat-list-item>
+<mat-divider></mat-divider>

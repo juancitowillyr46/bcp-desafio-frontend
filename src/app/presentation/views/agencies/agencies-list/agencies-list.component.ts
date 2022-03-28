@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { AgencyEntity } from 'src/app/core/domain/agencies/entities/agency.entities';
+import { AgencyModel } from 'src/app/core/domain/agencies/models/agency.model';
+import { AgenciesServices } from 'src/app/core/domain/agencies/services/agencies.service';
+import { AgenciesDetailObservable } from '../agencies-detail/agencies-detail.observable';
 
 @Component({
   selector: 'app-agencies-list',
@@ -8,25 +12,38 @@ import { Route, Router } from '@angular/router';
 })
 export class AgenciesListComponent implements OnInit {
 
-  public route: Router;
+  public agencies: AgencyModel[] = [];
 
   constructor(
-    public router: Router
+    public router: Router,
+    private agenciesService: AgenciesServices
   ) { 
-
-    this.route = router;
-
+    
   }
 
   ngOnInit(): void {
-  }
+    const that = this;
 
-  goDetailAgency(idAgency: number) {
-    this.router.navigate(['agencies/' + idAgency]);
+    if(localStorage.getItem("agencies") == undefined) {
+      that.agenciesService.getAllAgencies().subscribe( res => {
+        localStorage.setItem("agencies", JSON.stringify(res));
+        that.agencies = res;
+      });
+    } else {
+      let dataTmp: any = localStorage.getItem("agencies");
+      that.agencies = JSON.parse(dataTmp);
+    }
+   
   }
 
   goAddAgency() {
-    this.router.navigate(['agencies/' + 0]);
+    const that = this;
+    that.router.navigate(['agencies/' + 0]);
+  }
+
+  goDetailAgency(idAgency: number) {
+    const that = this;
+    that.router.navigate(['agencies/' + idAgency]);
   }
 
 }

@@ -7,6 +7,7 @@ import { AgenciesComponent } from './agencies.component';
 import { MaterialModule } from 'src/app/configurations/material.module';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AgenciesDetailObservable } from './agencies-detail/agencies-detail.observable';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
   exports: [
     AgenciesListComponent,
     AgenciesDetailComponent,
-  ]
+  ],
+  providers: [AgenciesDetailObservable]
 })
 export class AgenciesModule { }

@@ -1,23 +1,19 @@
 import { NgModule } from '@angular/core';
 import { LoadingPageComponent } from './shared/loading-page/loading-page.component';
-import { AgencyListComponent } from './agency-list/agency-list.component';
-import { AgencyDetailComponent } from './agency-detail/agency-detail.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AgencyMapComponent } from './agency-map/agency-map.component';
 import { MaterialModule } from 'src/app/configurations/material.module';
 import { CommonModule } from '@angular/common';
-
-
+import { AgencyItemComponent } from './agency-item/agency-item.component';
 
 @NgModule({
   declarations: [
     LoadingPageComponent,
-    AgencyListComponent,
-    AgencyDetailComponent,
     HeaderComponent,
     FooterComponent,
-    AgencyMapComponent
+    AgencyMapComponent,
+    AgencyItemComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +23,8 @@ import { CommonModule } from '@angular/common';
     LoadingPageComponent,
     HeaderComponent,
     FooterComponent,
-    AgencyMapComponent
+    AgencyMapComponent,
+    AgencyItemComponent
   ]
 })
 export class ComponentsModule { }
