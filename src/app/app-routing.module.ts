@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: 'agencies',
     loadChildren: () => import('./presentation/views/agencies/agencies.module').then(mod => mod.AgenciesModule),
+  },
+  {
+    path: '',
+    redirectTo: 'agencies'
   }
 ];
 
